@@ -44,7 +44,7 @@ router.get("/:id", async (req, res) => {
     const id = req.params.id;
     const crypto = await Crypto.findById(id);
     if (crypto) {
-      res.json(crypto)
+      res.json(crypto);
       res.status(404).json({});
     }
   } catch (error) {
@@ -96,6 +96,22 @@ router.delete("/:id", async (req, res) => {
       res.json(cryptoDeleted);
     } else {
       res.status(404).json({});
+    }
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+// Aquí empiezan los custom endpoints
+router.get("/name/:name", async (req, res) => {
+  const name = req.params.name;
+
+  try {
+    const crypto = await Crypto.find({ name: new RegExp("^" + name.toLowerCase(), "i") });
+    if (crypto?.length) {
+      res.json(crypto);
+    } else {
+      res.status(404).json([]);
     }
   } catch (error) {
     res.status(500).json(error);
