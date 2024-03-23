@@ -1,0 +1,40 @@
+{
+  "name": "node-18.3",
+  "version": "1.0.0",
+  "description": "Workshop Node 18.3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed:cryptos": "node ./seeds/cryptos.seed.js",
+    "seed:cars": "node ./seeds/car.seed.js",
+    "start": "node --watch index.js",
+    "lint": "eslint",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/macedo-rodrigo/node-18.3.git"
+  },
+  "keywords": [
+    "CRUD"
+  ],
+  "author": "Rodri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/macedo-rodrigo/node-18.3/issues"
+  },
+  "homepage": "https://github.com/macedo-rodrigo/node-18.3#readme",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "husky": "^8.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.1",
+    "mongoose": "^8.2.3"
+  }
+}
